@@ -13,22 +13,24 @@ interface Props {
 const EventCard = ({ title, image, slug, location, date, time }: Props) => {
     return (
         <Link href={`/events/${slug}`} id="event-card">
-            <Image src={image} alt={title} width={410} height={300} className="poster" />
+            <div className="relative w-full h-[300px]">
+                <Image src={image} alt={title} fill className="rounded-lg object-cover" />
+            </div>
 
-            <div className="flex flex-row gap-2">
-                <Image src="/icons/pin.svg" alt="location" width={14} height={14} />
+            <div className="flex flex-row gap-2 items-center">
+                <Image src="/icons/pin.svg" alt="location" width={14} height={14} className="w-auto h-auto" />
                 <p>{location}</p>
             </div>
 
             <p className="title">{title}</p>
 
             <div className="datetime">
-                <div>
-                    <Image src="/icons/calendar.svg" alt="date" width={14} height={14} />
+                <div className="flex flex-row items-center gap-2">
+                    <Image src="/icons/calendar.svg" alt="date" width={14} height={14} className="w-auto h-auto" />
                     <p>{date}</p>
                 </div>
-                <div>
-                    <Image src="/icons/clock.svg" alt="time" width={14} height={14} />
+                <div className="flex flex-row items-center gap-2">
+                    <Image src="/icons/clock.svg" alt="time" width={14} height={14} className="w-auto h-auto" />
                     <p>{time}</p>
                 </div>
             </div>
