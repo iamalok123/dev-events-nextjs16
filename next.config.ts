@@ -1,10 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  experimental: {
-    // @ts-expect-error dynamicIO is an experimental feature not yet in the official NextConfig types
-    dynamicIO: true,
-  },
+  // experimental: {
+  //   // @ts-expect-error dynamicIO is an experimental feature not yet in the official NextConfig types
+  //   dynamicIO: true,
+  // },
   typescript: {
     ignoreBuildErrors: true,
   },
