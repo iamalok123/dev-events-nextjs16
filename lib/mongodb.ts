@@ -3,7 +3,9 @@ import mongoose from 'mongoose';
 
 // Fix: Node.js c-ares DNS resolver fails SRV lookups on Windows.
 // Force Google DNS so mongodb+srv:// connections resolve correctly.
-dns.setServers(['8.8.8.8', '8.8.4.4', '1.1.1.1']);
+if (process.platform === 'win32') {
+  dns.setServers(['8.8.8.8', '8.8.4.4', '1.1.1.1']);
+}
 
 
 // Define the connection cache type

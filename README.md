@@ -1,39 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DevEvents - Event Management Platform
 
-## Getting Started
+A modern, full-stack event management application built with Next.js, featuring a beautiful UI, database integration, and analytics.
 
-First, run the development server:
+## 🚀 Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Framework:** [Next.js 16](https://nextjs.org/) (App Router)
+- **Frontend:** React 19, Tailwind CSS v4, `tw-animate-css`
+- **Database:** MongoDB & Mongoose
+- **Analytics:** PostHog
+- **Media/Images:** Cloudinary
+- **UI Effects:** `ogl` (WebGL for interactive LightRays)
+- **Fonts:** Schibsted Grotesk & Martian Mono (via `next/font`)
+
+## ✨ Features
+
+- **Event Discovery:** Browse and explore upcoming events with beautiful interactive UI elements.
+- **Event Booking:** Users can easily book tickets for events.
+- **Dynamic Routing:** Utilizing Next.js dynamic routes for individual event pages.
+- **Analytics Integration:** Fully integrated with PostHog to capture user behavior and booking events.
+- **Optimized Assets:** Uses Cloudinary for optimized image delivery.
+- **Serverless Ready:** Configured with MongoDB connection caching to run optimally on Vercel's serverless edge network.
+
+## ⚙️ Environment Variables
+
+To run this project locally or deploy it, you need the following environment variables in your `.env.local`:
+
+```env
+# PostHog Analytics
+NEXT_PUBLIC_POSTHOG_KEY=your_posthog_key
+NEXT_PUBLIC_POSTHOG_HOST=https://us.i.posthog.com # Or your proxy route e.g., /ingest
+
+# Base Application URL
+NEXT_PUBLIC_BASE_URL=http://localhost:3000 # Your deployment URL in production
+
+# MongoDB Connection
+MONGODB_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/<dbname>?retryWrites=true&w=majority
+
+# Cloudinary Setup
+CLOUDINARY_URL=cloudinary://<api_key>:<api_secret>@<cloud_name>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Getting Started Locally
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Set up your `.env.local` file.
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
+5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Deployment
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-
-currectly in branch: database-models
+This project is fully optimized for deployment on Vercel. See the provided instructions for detailed deployment steps.
